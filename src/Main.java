@@ -11,7 +11,8 @@ public class Main {
             System.out.println("\n==== TODO LIST ====");
             System.out.println("1. Add Task");
             System.out.println("2. List Tasks");
-            System.out.println("3. Exit");
+            System.out.println("3. Remove Task");
+            System.out.println("4. Exit");
             System.out.print("Choice: ");
 
             int choice = scanner.nextInt();
@@ -19,7 +20,7 @@ public class Main {
 
             switch (choice) {
 
-                case 1:
+                case 1: //add
                     System.out.print("Task description: ");
                     String description = scanner.nextLine();
 
@@ -31,11 +32,21 @@ public class Main {
                     System.out.println("Task added.");
                     break;
 
-                case 2:
+                case 2: //list
                     manager.listTasks();
                     break;
 
-                case 3:
+                case 3: //remove 
+                    manager.listTasks();
+
+                    System.out.print("Enter task number to remove: ");
+                    int taskNumber = scanner.nextInt();
+                    scanner.nextLine();
+
+                    manager.removeTask(taskNumber);
+                    break;
+
+                case 4: //exit
                     System.out.println("Bye!");
                     scanner.close();
                     return;

@@ -22,4 +22,14 @@ public class ToDoManager {
             System.out.println((i + 1) + ". " + tasks.get(i));
         }
     }
+    public void removeTask(int index) {
+
+    if (index < 1 || index > tasks.size()) {
+        System.out.println("Invalid task number.");
+        return;
+    }
+
+    tasks.remove(index - 1);
+    System.out.println("Task removed.");
+}
 }
